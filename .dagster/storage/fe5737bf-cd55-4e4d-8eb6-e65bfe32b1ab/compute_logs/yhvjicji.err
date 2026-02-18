@@ -1,0 +1,17 @@
+2026-02-18 19:50:59 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - LOGS_CAPTURED - Started capturing logs in process (pid: 2398).
+2026-02-18 19:50:59 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - run_bronze_payments - STEP_START - Started execution of step "run_bronze_payments".
+2026-02-18 19:50:59,850 - src.core.utils - INFO - Starting operation: bronze payments extraction
+2026-02-18 19:50:59,850 - src.core.bronze_payments - INFO - Starting bronze payments extraction
+2026-02-18 19:50:59,982 - src.core.utils - INFO - Bronze payments output: 1000 rows, 10 columns
+2026-02-18 19:50:59,984 - src.core.storage - INFO - Writing DataFrame to bronze/bronze_payments_20260218T195059Z.parquet using local backend
+2026-02-18 19:50:59,988 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/bronze/sample_bronze_payments_20260218T195059Z.parquet
+2026-02-18 19:50:59,991 - src.core.storage - INFO - Successfully wrote 1000 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/bronze/bronze_payments_20260218T195059Z.parquet
+2026-02-18 19:50:59,991 - src.core.bronze_payments - INFO - Bronze payments extraction completed: /home/runner/work/dna-platform/dna-platform/data/bronze/bronze_payments_20260218T195059Z.parquet
+2026-02-18 19:50:59,991 - src.core.utils - INFO - Completed operation 'bronze payments extraction' in 0.14 seconds
+2026-02-18 19:51:00 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - run_bronze_payments - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 19:51:00 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - run_bronze_payments - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_bronze_payments using PickledObjectFilesystemIOManager...
+2026-02-18 19:51:00,024 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 19:51:00,025 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 19:51:00 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - run_bronze_payments - ASSET_MATERIALIZATION - Materialized value run_bronze_payments.
+2026-02-18 19:51:00 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - run_bronze_payments - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 19:51:00 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2398 - run_bronze_payments - STEP_SUCCESS - Finished execution of step "run_bronze_payments" in 239ms.

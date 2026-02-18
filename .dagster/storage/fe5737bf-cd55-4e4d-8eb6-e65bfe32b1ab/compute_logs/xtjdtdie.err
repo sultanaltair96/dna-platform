@@ -1,0 +1,23 @@
+2026-02-18 19:51:06 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - LOGS_CAPTURED - Started capturing logs in process (pid: 2593).
+2026-02-18 19:51:06 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - STEP_START - Started execution of step "run_silver_clean_policies".
+2026-02-18 19:51:06,883 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 19:51:06,884 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 19:51:06 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - run_silver_clean_policies - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_bronze_policies using PickledObjectFilesystemIOManager...
+2026-02-18 19:51:06 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - LOADED_INPUT - Loaded input "run_bronze_policies" using input manager "io_manager", from output "result" of step "run_bronze_policies"
+2026-02-18 19:51:06 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - STEP_INPUT - Got input "run_bronze_policies" of type "Any". (Type check passed).
+2026-02-18 19:51:06,964 - src.core.utils - INFO - Starting operation: silver policies transformation
+2026-02-18 19:51:06,964 - src.core.silver_clean_policies - INFO - Starting silver policies transformation
+2026-02-18 19:51:06,964 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_policies_' using local backend
+2026-02-18 19:51:06,972 - src.core.storage - INFO - Successfully read 800 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/bronze/bronze_policies_20260218T195103Z.parquet
+2026-02-18 19:51:06,972 - src.core.utils - INFO - Bronze policies input: 800 rows, 13 columns
+2026-02-18 19:51:06,979 - src.core.utils - INFO - Transformed silver policies: 800 rows, 13 columns
+2026-02-18 19:51:06,980 - src.core.storage - INFO - Writing DataFrame to silver/silver_clean_policies_20260218T195106Z.parquet using local backend
+2026-02-18 19:51:06,984 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/sample_silver_clean_policies_20260218T195106Z.parquet
+2026-02-18 19:51:06,986 - src.core.storage - INFO - Successfully wrote 800 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_policies_20260218T195106Z.parquet
+2026-02-18 19:51:06,986 - src.core.silver_clean_policies - INFO - Silver policies transformation completed: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_policies_20260218T195106Z.parquet
+2026-02-18 19:51:06,986 - src.core.utils - INFO - Completed operation 'silver policies transformation' in 0.02 seconds
+2026-02-18 19:51:07 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 19:51:07 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - run_silver_clean_policies - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_policies using PickledObjectFilesystemIOManager...
+2026-02-18 19:51:07 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - ASSET_MATERIALIZATION - Materialized value run_silver_clean_policies.
+2026-02-18 19:51:07 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 19:51:07 +0000 - dagster - DEBUG - __ASSET_JOB - fe5737bf-cd55-4e4d-8eb6-e65bfe32b1ab - 2593 - run_silver_clean_policies - STEP_SUCCESS - Finished execution of step "run_silver_clean_policies" in 165ms.
