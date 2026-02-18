@@ -1,0 +1,74 @@
+# ADLS Setup Guide - GitLab CI
+
+This guide helps you configure Azure Data Lake Storage Gen2 for your Polster project when using GitLab CI.
+
+## Azure Data Lake Storage Gen2 Configuration
+
+### Prerequisites
+1. Azure Storage Account with Data Lake Storage Gen2 enabled
+2. Storage Account Key (or SAS token with appropriate permissions)
+3. Container created in your storage account
+
+### Current Configuration
+- Provider: adls
+- Account Name: {{BLOB_ACCOUNT_NAME}}
+- Container: {{BLOB_CONTAINER}}
+
+### Local Development (.env file)
+Your `.env` file should contain:
+```
+STORAGE_BACKEND=adls
+ADLS_ACCOUNT_NAME={{BLOB_ACCOUNT_NAME}}
+ADLS_CONTAINER={{BLOB_CONTAINER}}
+ADLS_ACCOUNT_KEY=your_account_key_here
+```
+
+### GitLab CI Configuration
+
+#### Project Variables Setup
+1. Go to your GitLab project
+2. Navigate to **Settings** -> **CI/CD** -> **Variables**
+3. Click **Add variable**
+4. Add the following variable:
+   - **Key**: `ADLS_ACCOUNT_KEY`
+   - **Value**: Your Azure storage account key
+   - **Type**: Variable (not File)
+   - **Environment scope**: All environments
+   - **Protect variable**: Check this box
+   - **Mask variable**: Check this box
+
+#### .gitlab-ci.yml Configuration
+Your pipeline will automatically use the variable:
+
+```yaml
+variables:
+  ADLS_ACCOUNT_KEY: $ADLS_ACCOUNT_KEY
+
+stages:
+  - data
+
+data_pipeline:
+  stage: data
+  script:
+    - python run_polster.py
+```
+
+### Testing Your Configuration
+1. Commit and push your changes
+2. Monitor the pipeline in **CI/CD** -> **Pipelines**
+3. Check job logs for execution details
+4. Verify data is stored in your Azure Data Lake container
+
+### Troubleshooting
+- **Variable not masked**: Ensure "Mask variable" is checked to hide the key in logs
+- **Permission denied**: Verify the variable is not protected if running on unprotected branches
+- **Container access**: Double-check container name and account permissions
+- **Data Lake Storage Gen2**: Ensure your storage account has hierarchical namespace enabled
+
+### Security Best Practices
+- Always protect and mask storage account keys
+- Use project-level variables for shared secrets
+- Consider using GitLab's integration with external secret managers
+- Regularly rotate Azure storage keys
+
+For more help, check the Polster documentation or create an issue on GitHub.

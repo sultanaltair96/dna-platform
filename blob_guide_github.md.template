@@ -1,0 +1,61 @@
+# ADLS Setup Guide - GitHub Actions
+
+This guide helps you configure Azure Data Lake Storage Gen2 for your Polster project when using GitHub Actions.
+
+## Azure Data Lake Storage Gen2 Configuration
+
+### Prerequisites
+1. Azure Storage Account with Data Lake Storage Gen2 enabled
+2. Storage Account Key (or SAS token with appropriate permissions)
+3. Container created in your storage account
+
+### Current Configuration
+- Provider: adls
+- Account Name: {{BLOB_ACCOUNT_NAME}}
+- Container: {{BLOB_CONTAINER}}
+
+### Local Development (.env file)
+Your `.env` file should contain:
+```
+STORAGE_BACKEND=adls
+ADLS_ACCOUNT_NAME={{BLOB_ACCOUNT_NAME}}
+ADLS_CONTAINER={{BLOB_CONTAINER}}
+ADLS_ACCOUNT_KEY=your_account_key_here
+```
+
+### GitHub Actions Configuration
+
+#### Repository Secrets Setup
+1. Go to your repository on GitHub
+2. Navigate to **Settings** -> **Secrets and variables** -> **Actions**
+3. Click **New repository secret**
+4. Add the following secret:
+   - **Name**: `ADLS_ACCOUNT_KEY`
+   - **Value**: Your Azure storage account key
+
+#### Workflow Configuration
+Your pipeline will automatically use ADLS. The environment variables are set by the workflow:
+
+```yaml
+env:
+  ADLS_ACCOUNT_KEY: ${{ secrets.ADLS_ACCOUNT_KEY }}
+```
+
+### Testing Your Configuration
+1. Push changes to trigger the workflow
+2. Check the Actions tab for pipeline execution
+3. Verify data is written to your Azure Data Lake container
+
+### Troubleshooting
+- **Authentication failed**: Verify the secret name matches exactly (`ADLS_ACCOUNT_KEY`)
+- **Permission denied**: Ensure your storage account key has read/write permissions
+- **Container not found**: Double-check the container name in your configuration
+- **Data Lake Storage Gen2**: Ensure your storage account has hierarchical namespace enabled
+
+### Security Best Practices
+- Never commit storage keys to your repository
+- Use repository secrets for sensitive data
+- Rotate keys regularly through Azure Portal
+- Consider using Azure Managed Identities for enhanced security
+
+For more help, check the Polster documentation or create an issue on GitHub.

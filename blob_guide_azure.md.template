@@ -1,0 +1,73 @@
+# ADLS Setup Guide - Azure DevOps
+
+This guide helps you configure Azure Data Lake Storage Gen2 for your Polster project when using Azure DevOps.
+
+## Azure Data Lake Storage Gen2 Configuration
+
+### Prerequisites
+1. Azure Storage Account with Data Lake Storage Gen2 enabled
+2. Storage Account Key (or SAS token with appropriate permissions)
+3. Container created in your storage account
+
+### Current Configuration
+- Provider: adls
+- Account Name: {{BLOB_ACCOUNT_NAME}}
+- Container: {{BLOB_CONTAINER}}
+
+### Local Development (.env file)
+Your `.env` file should contain:
+```
+STORAGE_BACKEND=adls
+ADLS_ACCOUNT_NAME={{BLOB_ACCOUNT_NAME}}
+ADLS_CONTAINER={{BLOB_CONTAINER}}
+ADLS_ACCOUNT_KEY=your_account_key_here
+```
+
+### Azure DevOps Configuration
+
+#### Pipeline Variables Setup
+1. Go to your Azure DevOps project
+2. Navigate to **Pipelines** -> Select your pipeline -> **Edit**
+3. Click the **Variables** tab
+4. Add the following variable:
+   - **Name**: `ADLS_ACCOUNT_KEY`
+   - **Value**: Your Azure storage account key
+   - **Keep this value secret**: Check this box
+
+#### Variable Groups (Recommended for Multiple Pipelines)
+1. Go to **Pipelines** -> **Library** -> **Variable groups**
+2. Create a new variable group (e.g., "adls-storage-secrets")
+3. Add the `ADLS_ACCOUNT_KEY` variable
+4. Link the variable group to your pipeline
+
+#### Pipeline YAML Configuration
+Reference the variable in your pipeline:
+
+```yaml
+variables:
+- group: adls-storage-secrets  # If using variable groups
+
+steps:
+- script: python run_polster.py
+  env:
+    ADLS_ACCOUNT_KEY: $(ADLS_ACCOUNT_KEY)
+```
+
+### Testing Your Configuration
+1. Run your pipeline manually
+2. Check the pipeline logs for execution details
+3. Verify data appears in your Azure Data Lake container
+
+### Troubleshooting
+- **Variable not found**: Ensure the variable name matches exactly (`ADLS_ACCOUNT_KEY`)
+- **Access denied**: Check that "Keep this value secret" is checked for the variable
+- **Permission issues**: Verify your storage account key has appropriate permissions
+- **Data Lake Storage Gen2**: Ensure your storage account has hierarchical namespace enabled
+
+### Security Best Practices
+- Always mark storage keys as secret variables
+- Use variable groups for secrets shared across pipelines
+- Consider Azure Key Vault integration for enhanced security
+- Regularly rotate storage account keys
+
+For more help, check the Polster documentation or create an issue on GitHub.
