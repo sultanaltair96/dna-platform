@@ -1,0 +1,219 @@
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - LOGS_CAPTURED - Started capturing logs in process (pid: 29477).
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - STEP_START - Started execution of step "run_gold_agent_performance".
+2026-02-18 20:33:51,029 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 20:33:51,029 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - run_gold_agent_performance - Loading file from: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_bronze_agents using PickledObjectFilesystemIOManager...
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - LOADED_INPUT - Loaded input "run_bronze_agents" using input manager "io_manager", from output "result" of step "run_bronze_agents"
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - run_gold_agent_performance - Loading file from: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_silver_clean_claims using PickledObjectFilesystemIOManager...
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - LOADED_INPUT - Loaded input "run_silver_clean_claims" using input manager "io_manager", from output "result" of step "run_silver_clean_claims"
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - STEP_INPUT - Got input "run_bronze_agents" of type "Any". (Type check passed).
+2026-02-18 20:33:51 +0100 - dagster - DEBUG - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - STEP_INPUT - Got input "run_silver_clean_claims" of type "Any". (Type check passed).
+2026-02-18 20:33:51,080 - src.core.utils - INFO - Starting operation: gold agent performance aggregation
+2026-02-18 20:33:51,080 - src.core.gold_agent_performance - INFO - Starting gold agent performance aggregation
+2026-02-18 20:33:51,080 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_agents_' using adls backend
+2026-02-18 20:33:51,256 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c0e49646-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:52,005 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '90b00f38-801f-006c-2b0d-a1d1a6000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'c0e49646-0d00-11f1-b8e8-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:33:51 GMT'
+2026-02-18 20:33:52,011 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_agents_20260218T193342Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c157cefe-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:52,276 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '6165'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:33:45 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F24A188A950"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '94047a1a-001e-0072-070d-a13d7e000000'
+    'x-ms-client-request-id': 'c157cefe-0d00-11f1-b8e8-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:33:51 GMT'
+2026-02-18 20:33:52,291 - src.core.storage - INFO - Successfully read 20 rows from ADLS: dna-platform/data/bronze/bronze_agents_20260218T193342Z.parquet
+2026-02-18 20:33:52,292 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_policies_' using adls backend
+2026-02-18 20:33:52,294 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c182e602-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:52,730 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'faf4f5f3-a01f-0054-670d-a17566000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'c182e602-0d00-11f1-b8e8-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:33:52 GMT'
+2026-02-18 20:33:52,733 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_policies_20260218T193348Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c1c5f7c6-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:52,919 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '9338'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:33:49 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F24A40A7720"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'e70e4ffb-801e-0053-540d-a11905000000'
+    'x-ms-client-request-id': 'c1c5f7c6-0d00-11f1-b8e8-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:33:52 GMT'
+2026-02-18 20:33:52,926 - src.core.storage - INFO - Successfully read 80 rows from ADLS: dna-platform/data/silver/silver_clean_policies_20260218T193348Z.parquet
+2026-02-18 20:33:52,927 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_claims_' using adls backend
+2026-02-18 20:33:52,929 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c1e3d41c-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:53,111 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'b435a860-801f-0043-2a0d-a1dc6d000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'c1e3d41c-0d00-11f1-b8e8-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:33:52 GMT'
+2026-02-18 20:33:53,112 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_claims_20260218T193348Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c1ffd626-0d00-11f1-b8e8-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:33:53,268 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '7607'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:33:49 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F24A402CBDC"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5e3427ef-001e-0000-360d-a13a31000000'
+    'x-ms-client-request-id': 'c1ffd626-0d00-11f1-b8e8-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:33:52 GMT'
+2026-02-18 20:33:53,269 - src.core.storage - INFO - Successfully read 30 rows from ADLS: dna-platform/data/silver/silver_clean_claims_20260218T193348Z.parquet
+2026-02-18 20:33:53,269 - src.core.utils - INFO - Bronze agents input: 20 rows, 12 columns
+2026-02-18 20:33:53,270 - src.core.utils - INFO - Silver policies input: 80 rows, 14 columns
+2026-02-18 20:33:53,270 - src.core.utils - INFO - Silver claims input: 30 rows, 12 columns
+2026-02-18 20:33:53,277 - src.core.utils - ERROR - Operation 'gold agent performance aggregation' failed after 2.20 seconds: cannot cast List type (inner: 'UInt32', to: 'Int32')
+2026-02-18 20:33:53 +0100 - dagster - ERROR - __ASSET_JOB - c6687c0e-24b9-45f8-a23c-9ee99c818c3b - 29477 - run_gold_agent_performance - STEP_FAILURE - Execution of step "run_gold_agent_performance" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_gold_agent_performance"::
+
+polars.exceptions.InvalidOperationError: cannot cast List type (inner: 'UInt32', to: 'Int32')
+
+Stack Trace:
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+        fn, context, kwargs, context_arg_provided, config_arg_class, resource_arg_mapping
+    )
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ~~^^^^^^^^^^^^^^^^
+  File "/Users/taniskarigar/test-polster/dna-platform/src/orchestration/assets/gold/run_gold_agent_performance.py", line 18, in run_gold_agent_performance
+    gold_path, df, metadata = aggregate()
+                              ~~~~~~~~~^^
+  File "/Users/taniskarigar/test-polster/dna-platform/src/core/gold_agent_performance.py", line 62, in aggregate
+    result = result.with_columns(
+        [
+            pl.col("policies_with_claims").cast(pl.Int32),
+        ]
+    )
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/polars/dataframe/frame.py", line 10473, in with_columns
+    .collect(optimizations=QueryOptFlags._eager())
+     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/polars/_utils/deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/polars/lazyframe/opt_flags.py", line 326, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/polars/lazyframe/frame.py", line 2440, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+

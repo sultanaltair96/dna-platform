@@ -1,0 +1,91 @@
+2026-02-18 20:31:31 +0100 - dagster - DEBUG - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - 23333 - LOGS_CAPTURED - Started capturing logs in process (pid: 23333).
+2026-02-18 20:31:31 +0100 - dagster - DEBUG - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - 23333 - run_silver_clean_claims - STEP_START - Started execution of step "run_silver_clean_claims".
+2026-02-18 20:31:31,546 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 20:31:31,546 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 20:31:31 +0100 - dagster - DEBUG - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - run_silver_clean_claims - Loading file from: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_bronze_claims using PickledObjectFilesystemIOManager...
+2026-02-18 20:31:31 +0100 - dagster - DEBUG - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - 23333 - run_silver_clean_claims - LOADED_INPUT - Loaded input "run_bronze_claims" using input manager "io_manager", from output "result" of step "run_bronze_claims"
+2026-02-18 20:31:31 +0100 - dagster - DEBUG - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - 23333 - run_silver_clean_claims - STEP_INPUT - Got input "run_bronze_claims" of type "Any". (Type check passed).
+2026-02-18 20:31:31,571 - src.core.utils - INFO - Starting operation: silver claims transformation
+2026-02-18 20:31:31,571 - src.core.silver_clean_claims - INFO - Starting silver claims transformation
+2026-02-18 20:31:31,571 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_claims_' using adls backend
+2026-02-18 20:31:31,651 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6dae78c0-0d00-11f1-bf92-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:31:31,846 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '742ef8a1-f01f-0004-1b0d-a1b736000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '6dae78c0-0d00-11f1-bf92-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:31:31 GMT'
+2026-02-18 20:31:31,848 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_claims_20260218T193128Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6dccacc8-0d00-11f1-bf92-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:31:32,036 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '7245'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:31:30 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F2450F91910"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6984c71b-801e-0031-130d-a1db22000000'
+    'x-ms-client-request-id': '6dccacc8-0d00-11f1-bf92-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:31:31 GMT'
+2026-02-18 20:31:32,039 - src.core.storage - INFO - Successfully read 30 rows from ADLS: dna-platform/data/bronze/bronze_claims_20260218T193128Z.parquet
+2026-02-18 20:31:32,042 - src.core.utils - INFO - Bronze claims input: 30 rows, 11 columns
+2026-02-18 20:31:32,043 - src.core.utils - ERROR - Operation 'silver claims transformation' failed after 0.47 seconds: 'ExprStringNameSpace' object has no attribute 'strip'
+2026-02-18 20:31:32 +0100 - dagster - ERROR - __ASSET_JOB - 8be0ff60-be5a-4894-9014-4075334ebd50 - 23333 - run_silver_clean_claims - STEP_FAILURE - Execution of step "run_silver_clean_claims" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_silver_clean_claims"::
+
+AttributeError: 'ExprStringNameSpace' object has no attribute 'strip'
+
+Stack Trace:
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+        fn, context, kwargs, context_arg_provided, config_arg_class, resource_arg_mapping
+    )
+  File "/Users/taniskarigar/test-polster/dna-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ~~^^^^^^^^^^^^^^^^
+  File "/Users/taniskarigar/test-polster/dna-platform/src/orchestration/assets/silver/run_silver_clean_claims.py", line 18, in run_silver_clean_claims
+    silver_path, df, metadata = transform()
+                                ~~~~~~~~~^^
+  File "/Users/taniskarigar/test-polster/dna-platform/src/core/silver_clean_claims.py", line 44, in transform
+    pl.col("claim_number").str.strip().str.to_uppercase(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

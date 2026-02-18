@@ -1,0 +1,190 @@
+2026-02-18 20:37:19 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - LOGS_CAPTURED - Started capturing logs in process (pid: 42670).
+2026-02-18 20:37:19 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - STEP_START - Started execution of step "run_silver_clean_payments".
+2026-02-18 20:37:19,116 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 20:37:19,116 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 20:37:19 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - run_silver_clean_payments - Loading file from: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_bronze_payments using PickledObjectFilesystemIOManager...
+2026-02-18 20:37:19 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - LOADED_INPUT - Loaded input "run_bronze_payments" using input manager "io_manager", from output "result" of step "run_bronze_payments"
+2026-02-18 20:37:19 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - STEP_INPUT - Got input "run_bronze_payments" of type "Any". (Type check passed).
+2026-02-18 20:37:19,146 - src.core.utils - INFO - Starting operation: silver payments transformation
+2026-02-18 20:37:19,146 - src.core.silver_clean_payments - INFO - Starting silver payments transformation
+2026-02-18 20:37:19,146 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_payments_' using adls backend
+2026-02-18 20:37:19,238 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3cdc0b94-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:19,403 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c7732328-101f-000c-370d-a1ad39000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3cdc0b94-0d01-11f1-aa95-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+2026-02-18 20:37:19,406 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_payments_20260218T193716Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3cf5cfde-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:19,575 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '8226'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F252030615C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6a90f93d-601e-0064-140d-a1cba9000000'
+    'x-ms-client-request-id': '3cf5cfde-0d01-11f1-aa95-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+2026-02-18 20:37:19,585 - src.core.storage - INFO - Successfully read 100 rows from ADLS: dna-platform/data/bronze/bronze_payments_20260218T193716Z.parquet
+2026-02-18 20:37:19,586 - src.core.utils - INFO - Bronze payments input: 100 rows, 10 columns
+2026-02-18 20:37:19,587 - src.core.utils - INFO - Transformed silver payments: 100 rows, 10 columns
+2026-02-18 20:37:19,587 - src.core.storage - INFO - Writing DataFrame to silver/silver_clean_payments_20260218T193719Z.parquet using adls backend
+2026-02-18 20:37:19,587 - src.core.storage - INFO - Writing DataFrame (100 rows, 11 columns) to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet
+2026-02-18 20:37:19,589 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data?restype=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3d11abd2-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:19,730 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Content-Length': '0'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:12:05 GMT'
+    'ETag': '"0x8DE6F219B11A707"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd4e688cb-901e-0070-620d-a183c6000000'
+    'x-ms-client-request-id': '3d11abd2-0d01-11f1-aa95-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-has-immutability-policy': 'REDACTED'
+    'x-ms-has-legal-hold': 'REDACTED'
+    'x-ms-immutable-storage-with-versioning-enabled': 'REDACTED'
+    'x-ms-default-encryption-scope': 'REDACTED'
+    'x-ms-deny-encryption-scope-override': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+2026-02-18 20:37:19,731 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3d275b80-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:19,878 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'ETag': '"0x8DE6F25217C7538"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e5db5-f01f-003b-530d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3d275b80-0d01-11f1-aa95-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:19,879 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3d3de148-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:19,919 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'ETag': '"0x8DE6F252181CDAC"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e5dba-f01f-003b-580d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3d3de148-0d01-11f1-aa95-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:19,919 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet?action=REDACTED&position=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'Content-Length': '8591'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3d44132e-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-02-18 20:37:19,953 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 202
+Response headers:
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e5dbe-f01f-003b-5c0d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3d44132e-0d01-11f1-aa95-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:19,953 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet?action=REDACTED&position=REDACTED&close=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'If-Match': '"0x8DE6F252181CDAC"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3d4946aa-0d01-11f1-aa95-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:20,010 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:20 GMT'
+    'ETag': '"0x8DE6F25219002BC"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e5dc2-f01f-003b-600d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3d4946aa-0d01-11f1-aa95-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:19 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:20,010 - src.core.storage - INFO - Successfully uploaded 0 bytes to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet
+2026-02-18 20:37:20,012 - src.core.storage - INFO - ADLS write successful: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet
+2026-02-18 20:37:20,013 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /Users/taniskarigar/test-polster/dna-platform/data/silver/sample_silver_clean_payments_20260218T193719Z.parquet
+2026-02-18 20:37:20,013 - src.core.silver_clean_payments - INFO - Silver payments transformation completed: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_payments_20260218T193719Z.parquet
+2026-02-18 20:37:20,013 - src.core.utils - INFO - Completed operation 'silver payments transformation' in 0.87 seconds
+2026-02-18 20:37:20 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 20:37:20 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - run_silver_clean_payments - Writing file at: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_silver_clean_payments using PickledObjectFilesystemIOManager...
+2026-02-18 20:37:20 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - ASSET_MATERIALIZATION - Materialized value run_silver_clean_payments.
+2026-02-18 20:37:20 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 20:37:20 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42670 - run_silver_clean_payments - STEP_SUCCESS - Finished execution of step "run_silver_clean_payments" in 915ms.

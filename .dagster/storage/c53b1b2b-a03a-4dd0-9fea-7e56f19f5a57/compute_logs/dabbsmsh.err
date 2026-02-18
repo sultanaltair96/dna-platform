@@ -1,0 +1,131 @@
+2026-02-18 20:37:16 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - LOGS_CAPTURED - Started capturing logs in process (pid: 42623).
+2026-02-18 20:37:16 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - run_bronze_policies - STEP_START - Started execution of step "run_bronze_policies".
+2026-02-18 20:37:16,826 - src.core.utils - INFO - Starting operation: bronze policies extraction
+2026-02-18 20:37:16,827 - src.core.bronze_policies - INFO - Starting bronze policies extraction
+2026-02-18 20:37:16,832 - src.core.utils - INFO - Bronze policies output: 80 rows, 13 columns
+2026-02-18 20:37:16,832 - src.core.storage - INFO - Writing DataFrame to bronze/bronze_policies_20260218T193716Z.parquet using adls backend
+2026-02-18 20:37:16,832 - src.core.storage - INFO - Writing DataFrame (80 rows, 13 columns) to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet
+2026-02-18 20:37:16,993 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data?restype=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3b856f2e-0d01-11f1-81cd-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:17,200 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Content-Length': '0'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:12:05 GMT'
+    'ETag': '"0x8DE6F219B11A707"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8fba5c9a-001e-0062-240d-a1f816000000'
+    'x-ms-client-request-id': '3b856f2e-0d01-11f1-81cd-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-has-immutability-policy': 'REDACTED'
+    'x-ms-has-legal-hold': 'REDACTED'
+    'x-ms-immutable-storage-with-versioning-enabled': 'REDACTED'
+    'x-ms-default-encryption-scope': 'REDACTED'
+    'x-ms-deny-encryption-scope-override': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:37:17 GMT'
+2026-02-18 20:37:17,201 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/bronze?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3ba55d3e-0d01-11f1-81cd-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:17,431 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'ETag': '"0x8DE6F2520069450"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '437adfef-c01f-0020-0e0d-a14196000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3ba55d3e-0d01-11f1-81cd-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:17,432 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3bc88106-0d01-11f1-81cd-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:17,472 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'ETag': '"0x8DE6F25200BFC84"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '437adff4-c01f-0020-130d-a14196000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3bc88106-0d01-11f1-81cd-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:17,473 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet?action=REDACTED&position=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'Content-Length': '8922'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3bced1b4-0d01-11f1-81cd-765227f64d11'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-02-18 20:37:17,510 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 202
+Response headers:
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '437adff8-c01f-0020-170d-a14196000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3bced1b4-0d01-11f1-81cd-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:17,511 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet?action=REDACTED&position=REDACTED&close=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'If-Match': '"0x8DE6F25200BFC84"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3bd48c1c-0d01-11f1-81cd-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:37:17,568 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'ETag': '"0x8DE6F25201ABEF8"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '437adffd-c01f-0020-1c0d-a14196000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '3bd48c1c-0d01-11f1-81cd-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:37:17 GMT'
+    'Content-Length': '0'
+2026-02-18 20:37:17,568 - src.core.storage - INFO - Successfully uploaded 0 bytes to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet
+2026-02-18 20:37:17,571 - src.core.storage - INFO - ADLS write successful: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet
+2026-02-18 20:37:17,574 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /Users/taniskarigar/test-polster/dna-platform/data/bronze/sample_bronze_policies_20260218T193716Z.parquet
+2026-02-18 20:37:17,574 - src.core.bronze_policies - INFO - Bronze policies extraction completed: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/bronze/bronze_policies_20260218T193716Z.parquet
+2026-02-18 20:37:17,574 - src.core.utils - INFO - Completed operation 'bronze policies extraction' in 0.75 seconds
+2026-02-18 20:37:17 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - run_bronze_policies - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 20:37:17 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - run_bronze_policies - Writing file at: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_bronze_policies using PickledObjectFilesystemIOManager...
+2026-02-18 20:37:17,587 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 20:37:17,587 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 20:37:17 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - run_bronze_policies - ASSET_MATERIALIZATION - Materialized value run_bronze_policies.
+2026-02-18 20:37:17 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - run_bronze_policies - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 20:37:17 +0100 - dagster - DEBUG - __ASSET_JOB - c53b1b2b-a03a-4dd0-9fea-7e56f19f5a57 - 42623 - run_bronze_policies - STEP_SUCCESS - Finished execution of step "run_bronze_policies" in 785ms.

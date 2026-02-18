@@ -1,0 +1,190 @@
+2026-02-18 20:35:35 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - LOGS_CAPTURED - Started capturing logs in process (pid: 36298).
+2026-02-18 20:35:35 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - STEP_START - Started execution of step "run_silver_clean_vehicles".
+2026-02-18 20:35:35,137 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 20:35:35,137 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 20:35:35 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - run_silver_clean_vehicles - Loading file from: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_bronze_vehicles using PickledObjectFilesystemIOManager...
+2026-02-18 20:35:35 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - LOADED_INPUT - Loaded input "run_bronze_vehicles" using input manager "io_manager", from output "result" of step "run_bronze_vehicles"
+2026-02-18 20:35:35 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - STEP_INPUT - Got input "run_bronze_vehicles" of type "Any". (Type check passed).
+2026-02-18 20:35:35,166 - src.core.utils - INFO - Starting operation: silver vehicles transformation
+2026-02-18 20:35:35,166 - src.core.silver_clean_vehicles - INFO - Starting silver vehicles transformation
+2026-02-18 20:35:35,166 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_vehicles_' using adls backend
+2026-02-18 20:35:35,269 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data?resource=REDACTED&directory=REDACTED&recursive=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'fee3acca-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:35,430 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7cb451e6-201f-0007-570d-a15652000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'fee3acca-0d00-11f1-8fa9-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+2026-02-18 20:35:35,433 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data/dna-platform/data/bronze/bronze_vehicles_20260218T193532Z.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'fefccd4a-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:35,607 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '6368'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:35:33 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE6F24E226AF74"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '19049666-b01e-0077-290d-a1efa5000000'
+    'x-ms-client-request-id': 'fefccd4a-0d00-11f1-8fa9-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+2026-02-18 20:35:35,610 - src.core.storage - INFO - Successfully read 40 rows from ADLS: dna-platform/data/bronze/bronze_vehicles_20260218T193532Z.parquet
+2026-02-18 20:35:35,610 - src.core.utils - INFO - Bronze vehicles input: 40 rows, 13 columns
+2026-02-18 20:35:35,612 - src.core.utils - INFO - Transformed silver vehicles: 40 rows, 13 columns
+2026-02-18 20:35:35,612 - src.core.storage - INFO - Writing DataFrame to silver/silver_clean_vehicles_20260218T193535Z.parquet using adls backend
+2026-02-18 20:35:35,612 - src.core.storage - INFO - Writing DataFrame (40 rows, 14 columns) to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet
+2026-02-18 20:35:35,614 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dna-platform-data?restype=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ff185be6-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:35,757 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Content-Length': '0'
+    'Last-Modified': 'Wed, 18 Feb 2026 19:12:05 GMT'
+    'ETag': '"0x8DE6F219B11A707"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '17067a4c-101e-000c-490d-a1ad39000000'
+    'x-ms-client-request-id': 'ff185be6-0d00-11f1-8fa9-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-has-immutability-policy': 'REDACTED'
+    'x-ms-has-legal-hold': 'REDACTED'
+    'x-ms-immutable-storage-with-versioning-enabled': 'REDACTED'
+    'x-ms-default-encryption-scope': 'REDACTED'
+    'x-ms-deny-encryption-scope-override': 'REDACTED'
+    'Date': 'Wed, 18 Feb 2026 19:35:34 GMT'
+2026-02-18 20:35:35,758 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ff2e5202-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:35,912 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:35:35 GMT'
+    'ETag': '"0x8DE6F24E383DD04"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e20c2-f01f-003b-3e0d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'ff2e5202-0d00-11f1-8fa9-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+    'Content-Length': '0'
+2026-02-18 20:35:35,912 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ff45d648-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:35,957 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:35:36 GMT'
+    'ETag': '"0x8DE6F24E389BEC0"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e20c6-f01f-003b-420d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'ff45d648-0d00-11f1-8fa9-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+    'Content-Length': '0'
+2026-02-18 20:35:35,958 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet?action=REDACTED&position=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'Content-Length': '6803'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ff4cc5ac-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-02-18 20:35:35,995 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 202
+Response headers:
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e20d4-f01f-003b-500d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'ff4cc5ac-0d00-11f1-8fa9-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+    'Content-Length': '0'
+2026-02-18 20:35:35,996 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dna-platform-data/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet?action=REDACTED&position=REDACTED&close=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'If-Match': '"0x8DE6F24E389BEC0"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ff52a06c-0d00-11f1-8fa9-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-18 20:35:36,058 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Last-Modified': 'Wed, 18 Feb 2026 19:35:36 GMT'
+    'ETag': '"0x8DE6F24E399DAC4"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '927e20da-f01f-003b-560d-a17f95000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': 'ff52a06c-0d00-11f1-8fa9-765227f64d11'
+    'Date': 'Wed, 18 Feb 2026 19:35:35 GMT'
+    'Content-Length': '0'
+2026-02-18 20:35:36,059 - src.core.storage - INFO - Successfully uploaded 0 bytes to ADLS: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet
+2026-02-18 20:35:36,061 - src.core.storage - INFO - ADLS write successful: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet
+2026-02-18 20:35:36,064 - src.core.storage - INFO - Successfully wrote 40 rows to local storage: /Users/taniskarigar/test-polster/dna-platform/data/silver/sample_silver_clean_vehicles_20260218T193535Z.parquet
+2026-02-18 20:35:36,064 - src.core.silver_clean_vehicles - INFO - Silver vehicles transformation completed: abfss://dna-platform-data@woningmarktintelx9.dfs.core.windows.net/dna-platform/data/silver/silver_clean_vehicles_20260218T193535Z.parquet
+2026-02-18 20:35:36,064 - src.core.utils - INFO - Completed operation 'silver vehicles transformation' in 0.90 seconds
+2026-02-18 20:35:36 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 20:35:36 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - run_silver_clean_vehicles - Writing file at: /Users/taniskarigar/test-polster/dna-platform/.dagster/storage/run_silver_clean_vehicles using PickledObjectFilesystemIOManager...
+2026-02-18 20:35:36 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - ASSET_MATERIALIZATION - Materialized value run_silver_clean_vehicles.
+2026-02-18 20:35:36 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 20:35:36 +0100 - dagster - DEBUG - __ASSET_JOB - c5dbed3d-db64-4edf-b684-0bffbff28c6c - 36298 - run_silver_clean_vehicles - STEP_SUCCESS - Finished execution of step "run_silver_clean_vehicles" in 953ms.
