@@ -1,0 +1,23 @@
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - LOGS_CAPTURED - Started capturing logs in process (pid: 2612).
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - STEP_START - Started execution of step "run_silver_clean_vehicles".
+2026-02-18 19:48:05,279 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 19:48:05,280 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_silver_clean_vehicles - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_bronze_vehicles using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - LOADED_INPUT - Loaded input "run_bronze_vehicles" using input manager "io_manager", from output "result" of step "run_bronze_vehicles"
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - STEP_INPUT - Got input "run_bronze_vehicles" of type "Any". (Type check passed).
+2026-02-18 19:48:05,374 - src.core.utils - INFO - Starting operation: silver vehicles transformation
+2026-02-18 19:48:05,374 - src.core.silver_clean_vehicles - INFO - Starting silver vehicles transformation
+2026-02-18 19:48:05,375 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_vehicles_' using local backend
+2026-02-18 19:48:05,385 - src.core.storage - INFO - Successfully read 400 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/bronze/bronze_vehicles_20260218T194801Z.parquet
+2026-02-18 19:48:05,385 - src.core.utils - INFO - Bronze vehicles input: 400 rows, 13 columns
+2026-02-18 19:48:05,389 - src.core.utils - INFO - Transformed silver vehicles: 400 rows, 13 columns
+2026-02-18 19:48:05,390 - src.core.storage - INFO - Writing DataFrame to silver/silver_clean_vehicles_20260218T194805Z.parquet using local backend
+2026-02-18 19:48:05,392 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/sample_silver_clean_vehicles_20260218T194805Z.parquet
+2026-02-18 19:48:05,395 - src.core.storage - INFO - Successfully wrote 400 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_vehicles_20260218T194805Z.parquet
+2026-02-18 19:48:05,395 - src.core.silver_clean_vehicles - INFO - Silver vehicles transformation completed: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_vehicles_20260218T194805Z.parquet
+2026-02-18 19:48:05,396 - src.core.utils - INFO - Completed operation 'silver vehicles transformation' in 0.02 seconds
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_silver_clean_vehicles - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_vehicles using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - ASSET_MATERIALIZATION - Materialized value run_silver_clean_vehicles.
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2612 - run_silver_clean_vehicles - STEP_SUCCESS - Finished execution of step "run_silver_clean_vehicles" in 168ms.

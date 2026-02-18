@@ -1,0 +1,23 @@
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - LOGS_CAPTURED - Started capturing logs in process (pid: 2710).
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - STEP_START - Started execution of step "run_gold_claims_summary".
+2026-02-18 19:48:08,315 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 19:48:08,315 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_gold_claims_summary - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_claims using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - LOADED_INPUT - Loaded input "run_silver_clean_claims" using input manager "io_manager", from output "result" of step "run_silver_clean_claims"
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - STEP_INPUT - Got input "run_silver_clean_claims" of type "Any". (Type check passed).
+2026-02-18 19:48:08,393 - src.core.utils - INFO - Starting operation: gold claims summary aggregation
+2026-02-18 19:48:08,393 - src.core.gold_claims_summary - INFO - Starting gold claims summary aggregation
+2026-02-18 19:48:08,393 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_claims_' using local backend
+2026-02-18 19:48:08,401 - src.core.storage - INFO - Successfully read 300 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_claims_20260218T194802Z.parquet
+2026-02-18 19:48:08,402 - src.core.utils - INFO - Silver claims input: 300 rows, 12 columns
+2026-02-18 19:48:08,407 - src.core.utils - INFO - Gold claims summary output: 35 rows, 8 columns
+2026-02-18 19:48:08,407 - src.core.storage - INFO - Writing DataFrame to gold/gold_claims_summary_20260218T194808Z.parquet using local backend
+2026-02-18 19:48:08,409 - src.core.storage - INFO - Successfully wrote 35 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/sample_gold_claims_summary_20260218T194808Z.parquet
+2026-02-18 19:48:08,411 - src.core.storage - INFO - Successfully wrote 35 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/gold_claims_summary_20260218T194808Z.parquet
+2026-02-18 19:48:08,411 - src.core.gold_claims_summary - INFO - Gold claims summary aggregation completed: /home/runner/work/dna-platform/dna-platform/data/gold/gold_claims_summary_20260218T194808Z.parquet
+2026-02-18 19:48:08,411 - src.core.utils - INFO - Completed operation 'gold claims summary aggregation' in 0.02 seconds
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_gold_claims_summary - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_gold_claims_summary using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - ASSET_MATERIALIZATION - Materialized value run_gold_claims_summary.
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 19:48:08 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2710 - run_gold_claims_summary - STEP_SUCCESS - Finished execution of step "run_gold_claims_summary" in 150ms.

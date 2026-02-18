@@ -1,0 +1,23 @@
+2026-02-18 19:48:04 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - LOGS_CAPTURED - Started capturing logs in process (pid: 2610).
+2026-02-18 19:48:04 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - STEP_START - Started execution of step "run_silver_clean_payments".
+2026-02-18 19:48:04,950 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-18 19:48:04,950 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_silver_clean_payments - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_bronze_payments using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - LOADED_INPUT - Loaded input "run_bronze_payments" using input manager "io_manager", from output "result" of step "run_bronze_payments"
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - STEP_INPUT - Got input "run_bronze_payments" of type "Any". (Type check passed).
+2026-02-18 19:48:05,026 - src.core.utils - INFO - Starting operation: silver payments transformation
+2026-02-18 19:48:05,026 - src.core.silver_clean_payments - INFO - Starting silver payments transformation
+2026-02-18 19:48:05,026 - src.core.storage - INFO - Reading latest parquet file from bronze layer with prefix 'bronze_payments_' using local backend
+2026-02-18 19:48:05,035 - src.core.storage - INFO - Successfully read 1000 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/bronze/bronze_payments_20260218T194758Z.parquet
+2026-02-18 19:48:05,035 - src.core.utils - INFO - Bronze payments input: 1000 rows, 10 columns
+2026-02-18 19:48:05,040 - src.core.utils - INFO - Transformed silver payments: 1000 rows, 10 columns
+2026-02-18 19:48:05,040 - src.core.storage - INFO - Writing DataFrame to silver/silver_clean_payments_20260218T194805Z.parquet using local backend
+2026-02-18 19:48:05,044 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/sample_silver_clean_payments_20260218T194805Z.parquet
+2026-02-18 19:48:05,048 - src.core.storage - INFO - Successfully wrote 1000 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_payments_20260218T194805Z.parquet
+2026-02-18 19:48:05,048 - src.core.silver_clean_payments - INFO - Silver payments transformation completed: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_payments_20260218T194805Z.parquet
+2026-02-18 19:48:05,049 - src.core.utils - INFO - Completed operation 'silver payments transformation' in 0.02 seconds
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - run_silver_clean_payments - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_payments using PickledObjectFilesystemIOManager...
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - ASSET_MATERIALIZATION - Materialized value run_silver_clean_payments.
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-18 19:48:05 +0000 - dagster - DEBUG - __ASSET_JOB - 07acd82b-ccd2-4242-8c33-cdde70fedc43 - 2610 - run_silver_clean_payments - STEP_SUCCESS - Finished execution of step "run_silver_clean_payments" in 152ms.
