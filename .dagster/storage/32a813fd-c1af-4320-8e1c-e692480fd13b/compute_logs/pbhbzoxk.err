@@ -1,0 +1,29 @@
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - LOGS_CAPTURED - Started capturing logs in process (pid: 2687).
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - STEP_START - Started execution of step "run_gold_premium_revenue".
+2026-02-19 00:15:41,903 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-19 00:15:41,903 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - run_gold_premium_revenue - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_payments using PickledObjectFilesystemIOManager...
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - LOADED_INPUT - Loaded input "run_silver_clean_payments" using input manager "io_manager", from output "result" of step "run_silver_clean_payments"
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - run_gold_premium_revenue - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_policies using PickledObjectFilesystemIOManager...
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - LOADED_INPUT - Loaded input "run_silver_clean_policies" using input manager "io_manager", from output "result" of step "run_silver_clean_policies"
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - STEP_INPUT - Got input "run_silver_clean_payments" of type "Any". (Type check passed).
+2026-02-19 00:15:41 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - STEP_INPUT - Got input "run_silver_clean_policies" of type "Any". (Type check passed).
+2026-02-19 00:15:41,999 - src.core.utils - INFO - Starting operation: gold premium revenue aggregation
+2026-02-19 00:15:41,999 - src.core.gold_premium_revenue - INFO - Starting gold premium revenue aggregation
+2026-02-19 00:15:41,999 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_policies_' using local backend
+2026-02-19 00:15:42,006 - src.core.storage - INFO - Successfully read 800 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_policies_20260219T001538Z.parquet
+2026-02-19 00:15:42,006 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_payments_' using local backend
+2026-02-19 00:15:42,009 - src.core.storage - INFO - Successfully read 1000 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_payments_20260219T001538Z.parquet
+2026-02-19 00:15:42,009 - src.core.utils - INFO - Silver policies input: 800 rows, 14 columns
+2026-02-19 00:15:42,009 - src.core.utils - INFO - Silver payments input: 1000 rows, 11 columns
+2026-02-19 00:15:42,013 - src.core.utils - INFO - Gold premium revenue output: 5 rows, 7 columns
+2026-02-19 00:15:42,013 - src.core.storage - INFO - Writing DataFrame to gold/gold_premium_revenue_20260219T001542Z.parquet using local backend
+2026-02-19 00:15:42,015 - src.core.storage - INFO - Successfully wrote 5 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/sample_gold_premium_revenue_20260219T001542Z.parquet
+2026-02-19 00:15:42,016 - src.core.storage - INFO - Successfully wrote 5 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/gold_premium_revenue_20260219T001542Z.parquet
+2026-02-19 00:15:42,016 - src.core.gold_premium_revenue - INFO - Gold premium revenue aggregation completed: /home/runner/work/dna-platform/dna-platform/data/gold/gold_premium_revenue_20260219T001542Z.parquet
+2026-02-19 00:15:42,016 - src.core.utils - INFO - Completed operation 'gold premium revenue aggregation' in 0.02 seconds
+2026-02-19 00:15:42 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-19 00:15:42 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - run_gold_premium_revenue - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_gold_premium_revenue using PickledObjectFilesystemIOManager...
+2026-02-19 00:15:42 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - ASSET_MATERIALIZATION - Materialized value run_gold_premium_revenue.
+2026-02-19 00:15:42 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-19 00:15:42 +0000 - dagster - DEBUG - __ASSET_JOB - 32a813fd-c1af-4320-8e1c-e692480fd13b - 2687 - run_gold_premium_revenue - STEP_SUCCESS - Finished execution of step "run_gold_premium_revenue" in 159ms.
