@@ -1,0 +1,29 @@
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - LOGS_CAPTURED - Started capturing logs in process (pid: 2675).
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - STEP_START - Started execution of step "run_silver_customer_policies".
+2026-02-21 00:14:19,977 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-21 00:14:19,977 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_silver_customer_policies - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_customers using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - LOADED_INPUT - Loaded input "run_silver_clean_customers" using input manager "io_manager", from output "result" of step "run_silver_clean_customers"
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_silver_customer_policies - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_policies using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - LOADED_INPUT - Loaded input "run_silver_clean_policies" using input manager "io_manager", from output "result" of step "run_silver_clean_policies"
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - STEP_INPUT - Got input "run_silver_clean_customers" of type "Any". (Type check passed).
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - STEP_INPUT - Got input "run_silver_clean_policies" of type "Any". (Type check passed).
+2026-02-21 00:14:20,083 - src.core.utils - INFO - Starting operation: silver customer-policies join
+2026-02-21 00:14:20,083 - src.core.silver_customer_policies - INFO - Starting silver customer-policies join
+2026-02-21 00:14:20,083 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_customers_' using local backend
+2026-02-21 00:14:20,092 - src.core.storage - INFO - Successfully read 500 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_customers_20260221T001416Z.parquet
+2026-02-21 00:14:20,092 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_policies_' using local backend
+2026-02-21 00:14:20,094 - src.core.storage - INFO - Successfully read 800 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_policies_20260221T001416Z.parquet
+2026-02-21 00:14:20,094 - src.core.utils - INFO - Silver customers input: 500 rows, 16 columns
+2026-02-21 00:14:20,094 - src.core.utils - INFO - Silver policies input: 800 rows, 14 columns
+2026-02-21 00:14:20,096 - src.core.utils - INFO - Joined silver customer-policies: 800 rows, 29 columns
+2026-02-21 00:14:20,097 - src.core.storage - INFO - Writing DataFrame to silver/silver_customer_policies_20260221T001420Z.parquet using local backend
+2026-02-21 00:14:20,102 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/sample_silver_customer_policies_20260221T001420Z.parquet
+2026-02-21 00:14:20,106 - src.core.storage - INFO - Successfully wrote 800 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_customer_policies_20260221T001420Z.parquet
+2026-02-21 00:14:20,106 - src.core.silver_customer_policies - INFO - Silver customer-policies join completed: /home/runner/work/dna-platform/dna-platform/data/silver/silver_customer_policies_20260221T001420Z.parquet
+2026-02-21 00:14:20,106 - src.core.utils - INFO - Completed operation 'silver customer-policies join' in 0.02 seconds
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_silver_customer_policies - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_customer_policies using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - ASSET_MATERIALIZATION - Materialized value run_silver_customer_policies.
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-21 00:14:20 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2675 - run_silver_customer_policies - STEP_SUCCESS - Finished execution of step "run_silver_customer_policies" in 177ms.

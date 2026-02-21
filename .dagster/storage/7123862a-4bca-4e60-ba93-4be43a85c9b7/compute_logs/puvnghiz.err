@@ -1,0 +1,32 @@
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - LOGS_CAPTURED - Started capturing logs in process (pid: 2669).
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - STEP_START - Started execution of step "run_gold_agent_performance".
+2026-02-21 00:14:19,151 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-21 00:14:19,151 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_agent_performance - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_agents using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - LOADED_INPUT - Loaded input "run_silver_clean_agents" using input manager "io_manager", from output "result" of step "run_silver_clean_agents"
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_agent_performance - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_clean_claims using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - LOADED_INPUT - Loaded input "run_silver_clean_claims" using input manager "io_manager", from output "result" of step "run_silver_clean_claims"
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - STEP_INPUT - Got input "run_silver_clean_agents" of type "Any". (Type check passed).
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - STEP_INPUT - Got input "run_silver_clean_claims" of type "Any". (Type check passed).
+2026-02-21 00:14:19,253 - src.core.utils - INFO - Starting operation: gold agent performance aggregation
+2026-02-21 00:14:19,253 - src.core.gold_agent_performance - INFO - Starting gold agent performance aggregation
+2026-02-21 00:14:19,253 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_agents_' using local backend
+2026-02-21 00:14:19,265 - src.core.storage - INFO - Successfully read 20 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_agents_20260221T001413Z.parquet
+2026-02-21 00:14:19,265 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_policies_' using local backend
+2026-02-21 00:14:19,267 - src.core.storage - INFO - Successfully read 800 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_policies_20260221T001416Z.parquet
+2026-02-21 00:14:19,268 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_clean_claims_' using local backend
+2026-02-21 00:14:19,270 - src.core.storage - INFO - Successfully read 300 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_clean_claims_20260221T001413Z.parquet
+2026-02-21 00:14:19,271 - src.core.utils - INFO - Silver agents input: 20 rows, 13 columns
+2026-02-21 00:14:19,271 - src.core.utils - INFO - Silver policies input: 800 rows, 14 columns
+2026-02-21 00:14:19,272 - src.core.utils - INFO - Silver claims input: 300 rows, 12 columns
+2026-02-21 00:14:19,279 - src.core.utils - INFO - Gold agent performance output: 20 rows, 19 columns
+2026-02-21 00:14:19,279 - src.core.storage - INFO - Writing DataFrame to gold/gold_agent_performance_20260221T001419Z.parquet using local backend
+2026-02-21 00:14:19,282 - src.core.storage - INFO - Successfully wrote 20 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/sample_gold_agent_performance_20260221T001419Z.parquet
+2026-02-21 00:14:19,284 - src.core.storage - INFO - Successfully wrote 20 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/gold_agent_performance_20260221T001419Z.parquet
+2026-02-21 00:14:19,284 - src.core.gold_agent_performance - INFO - Gold agent performance aggregation completed: /home/runner/work/dna-platform/dna-platform/data/gold/gold_agent_performance_20260221T001419Z.parquet
+2026-02-21 00:14:19,284 - src.core.utils - INFO - Completed operation 'gold agent performance aggregation' in 0.03 seconds
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_agent_performance - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_gold_agent_performance using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - ASSET_MATERIALIZATION - Materialized value run_gold_agent_performance.
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-21 00:14:19 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2669 - run_gold_agent_performance - STEP_SUCCESS - Finished execution of step "run_gold_agent_performance" in 190ms.

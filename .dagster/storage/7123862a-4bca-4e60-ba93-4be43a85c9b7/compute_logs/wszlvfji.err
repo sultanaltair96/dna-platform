@@ -1,0 +1,29 @@
+2026-02-21 00:14:23 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - LOGS_CAPTURED - Started capturing logs in process (pid: 2795).
+2026-02-21 00:14:23 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - STEP_START - Started execution of step "run_gold_customer_risk".
+2026-02-21 00:14:23,970 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-21 00:14:23,970 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_customer_risk - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_customer_policies using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - LOADED_INPUT - Loaded input "run_silver_customer_policies" using input manager "io_manager", from output "result" of step "run_silver_customer_policies"
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_customer_risk - Loading file from: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_silver_policy_claims using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - LOADED_INPUT - Loaded input "run_silver_policy_claims" using input manager "io_manager", from output "result" of step "run_silver_policy_claims"
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - STEP_INPUT - Got input "run_silver_customer_policies" of type "Any". (Type check passed).
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - STEP_INPUT - Got input "run_silver_policy_claims" of type "Any". (Type check passed).
+2026-02-21 00:14:24,040 - src.core.utils - INFO - Starting operation: gold customer risk aggregation
+2026-02-21 00:14:24,040 - src.core.gold_customer_risk - INFO - Starting gold customer risk aggregation
+2026-02-21 00:14:24,040 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_customer_policies_' using local backend
+2026-02-21 00:14:24,048 - src.core.storage - INFO - Successfully read 800 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_customer_policies_20260221T001420Z.parquet
+2026-02-21 00:14:24,048 - src.core.storage - INFO - Reading latest parquet file from silver layer with prefix 'silver_policy_claims_' using local backend
+2026-02-21 00:14:24,050 - src.core.storage - INFO - Successfully read 853 rows from local storage: /home/runner/work/dna-platform/dna-platform/data/silver/silver_policy_claims_20260221T001421Z.parquet
+2026-02-21 00:14:24,050 - src.core.utils - INFO - Silver customer-policies input: 800 rows, 29 columns
+2026-02-21 00:14:24,050 - src.core.utils - INFO - Silver policy-claims input: 853 rows, 26 columns
+2026-02-21 00:14:24,054 - src.core.utils - INFO - Gold customer risk output: 399 rows, 9 columns
+2026-02-21 00:14:24,054 - src.core.storage - INFO - Writing DataFrame to gold/gold_customer_risk_20260221T001424Z.parquet using local backend
+2026-02-21 00:14:24,055 - src.core.storage - INFO - Successfully wrote 50 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/sample_gold_customer_risk_20260221T001424Z.parquet
+2026-02-21 00:14:24,056 - src.core.storage - INFO - Successfully wrote 399 rows to local storage: /home/runner/work/dna-platform/dna-platform/data/gold/gold_customer_risk_20260221T001424Z.parquet
+2026-02-21 00:14:24,056 - src.core.gold_customer_risk - INFO - Gold customer risk aggregation completed: /home/runner/work/dna-platform/dna-platform/data/gold/gold_customer_risk_20260221T001424Z.parquet
+2026-02-21 00:14:24,056 - src.core.utils - INFO - Completed operation 'gold customer risk aggregation' in 0.02 seconds
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - run_gold_customer_risk - Writing file at: /home/runner/work/dna-platform/dna-platform/.dagster/storage/run_gold_customer_risk using PickledObjectFilesystemIOManager...
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - ASSET_MATERIALIZATION - Materialized value run_gold_customer_risk.
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-21 00:14:24 +0000 - dagster - DEBUG - __ASSET_JOB - 7123862a-4bca-4e60-ba93-4be43a85c9b7 - 2795 - run_gold_customer_risk - STEP_SUCCESS - Finished execution of step "run_gold_customer_risk" in 124ms.
